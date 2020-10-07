@@ -1,34 +1,42 @@
 <div>
+  <div class="row m-0">
+    <div class="col-12 p-2">
+      <div class="cardBg ml-auto mr-auto text-center">
+        <h1 class="cardNumber">{{giftCards.card_number}}</h1>
+        <h2 class="expDate">Expiry Date {{giftCards.expiry_date}}</h2>
+        <h2 class="cardUserName">{{giftCards.user_name}}</h2>
+      </div>
+    </div>
+    <div class="col-12 text-center m-3">
+      Yes Regalia
+    </div>
+    <div class="col-12 row text-center">
+      <div class="col-4">
+        <div>Ballance</div>
+        <div>₹5555</div>
+      </div>
+      <div class="col-4">
+        <div>CVV</div>
+        <div>5678</div>
+      </div>
+      <div class="col-4">
+        <div>Status</div>
+        <div>Active</div>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid mt-5">
     <div class="card jh-card p-2 pb-4 mt-3">
-      <h2>
-          <span>Gift Cards</span>
-      </h2>
-      <div class="table-responsive">
-          <table class="table table-striped">
-              <thead>
-              <tr>
-                  <th><span>ID</span></th>
-                  <th><span>Name</span></th>
-                  <th><span>Mobile</span></th>
-                  <th><span>Load Amount</span></th>
-                  <th><span>Remaining Amt</span></th>
-                  <th><span>status</span></th>
-                  <th><span>Created At</span></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let card of giftCards.transactions">
-                  <td>{{card.id}}</td>
-                  <td>{{card.name}}</td>
-                  <td>{{card.mobile}}</td>
-                  <td>{{card.loadAmt}}</td>
-                  <td>{{card.remainingAmt}}</td>
-                  <td>{{card.status}}</td>
-                  <td>{{card.createdAt}}</td>
-              </tr>
-              </tbody>
-          </table>
+      <div>
+        <h2 class="col-12" id="myUserLabel">
+          <span>Latest Transaction</span>
+          <span class="float-right">
+            More<span class="fa fa-arrow-right ml-2"></span>
+          </span>
+        </h2>
+      </div>
+      <div class="txnSec" *ngFor="let txn of giftCards.transactions">
+
       </div>
     </div>
   </div>

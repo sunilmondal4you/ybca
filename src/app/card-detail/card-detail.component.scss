@@ -1,0 +1,64 @@
+.user-image{
+  float: right;
+  height: 110px;
+  width: 110px;
+  background: darkcyan;
+  border-radius: 52px
+}
+
+.cardBg{
+  background-image: url(./../../assets/img/Gift_Card.png);
+  background-color: #cccccc;
+  height: 225px;
+  width: 385px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.cardNumber{
+  padding-top: 70px;
+  color: #fff;
+  letter-spacing: 6px;
+  margin-bottom: 0px;
+}
+.expDate{
+  color: #fff;
+  letter-spacing: 6px;
+  margin-bottom: 0px;
+}
+.cardUserName{
+  color: #fff;
+  letter-spacing: 6px;
+  margin-bottom: 0px;
+}
+.manageSec{
+  color: #b0b01c;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.manageSec span{
+  cursor: pointer;
+}
+.downloadIcon{
+  float: right;
+  color: #2727e7;
+  cursor: pointer;
+}
+.balanceSec{
+  margin: 20px auto;
+  background: #e3e3e3;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.balanceAmt{
+  float: right;
+  color: #0db40d;
+}
+.txnSec{
+
+}
+
