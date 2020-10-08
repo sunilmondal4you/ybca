@@ -26,9 +26,11 @@ export class CardDetailComponent implements OnInit {
       {"transaction_date":"2019-09-23T13:40:45.000+05:30","amount":"50.0","transaction_reference_number":"2019092397253","transaction_type":"Credited","message":"GiftCard issued for Rs.50.0"},
     ]
    };
+
   constructor() { }
 
   ngOnInit(): void {
+    this.giftCards.card_number = this.giftCards.card_number.replace(/(\d{4}(?!\s))/g, "$1 ")
   }
 
   previousState() {
