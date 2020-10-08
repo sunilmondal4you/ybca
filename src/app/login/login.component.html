@@ -10,18 +10,15 @@
     <div class="bottomSec">
       <div>
         <form [formGroup]="cardForm" *ngIf="!mobileSecDisp">
-          <div class="form-group">
-            <label class="form-control-label">Card Type</label>
-            <select class="form-control" id="field_cardType" name="cardType" formControlName="cardType">
-              <option *ngIf="!cardForm.get('cardType').value" selected>select</option>
-              <option [ngValue]="item" *ngFor="let item of cardTypeList">{{item}}</option>
-            </select>
-            <div *ngIf="cardForm.get('cardType').invalid && (cardForm.get('cardType').dirty || cardForm.get('cardType').touched)">
-              <small class="form-text text-danger" *ngIf="cardForm.get('cardType').errors.required">
-                This field is required.
-              </small>
-            </div>
-          </div>
+          <mat-form-field class="form-group example-full-width">
+            <mat-label>Card Type</mat-label>
+            <mat-select name="cardType" formControlName="cardType">
+              <mat-option [value]="item" *ngFor="let item of cardTypeList">{{item}}</mat-option>
+              <div *ngIf="cardForm.get('cardType').invalid && (cardForm.get('cardType').dirty || cardForm.get('cardType').touched)">
+                <mat-error *ngIf="cardForm.get('cardType').errors.required">This field is required.</mat-error>
+              </div>
+            </mat-select>
+          </mat-form-field>
           <div class="text-center">
             <button type="button" class="btn btn-primary my-4" (click)="next()">Next
               <span class="fa fa-arrow-right"></span>
@@ -29,20 +26,16 @@
           </div>
         </form>
         <form [formGroup]="mobileForm" [hidden]="!mobileSecDisp">
-          <div class="form-group">
-            <label class="form-control-label">Mobile No.</label>
-            <input type="text" class="form-control" placeholder="Mobile" name="mobile" formControlName="mobile">
+          <mat-form-field class="form-group example-full-width mb-0">
+            <mat-label>Mobile No.</mat-label>
+            <input matInput type="text" class="form-control" placeholder="Mobile" name="mobile" formControlName="mobile">
+            <mat-error *ngIf="mobileForm.get('mobile').errors.required">This field is required.</mat-error>
             <div *ngIf="mobileForm.get('mobile').invalid && (mobileForm.get('mobile').dirty || mobileForm.get('mobile').touched)">
-              <small class="form-text text-danger" *ngIf="mobileForm.get('mobile').errors.required">
-                This field is required.
-              </small>
-              <small class="form-text text-danger" *ngIf="mobileForm.get('mobile').errors.maxlength">
-                  This field cannot be longer than 10 characters.
-              </small>
+              <mat-error *ngIf="mobileForm.get('mobile').errors.maxlength">This field cannot be longer than 10 characters.</mat-error>
             </div>
-          </div>
+          </mat-form-field>
           <div class="text-center">
-            <button type="button" class="btn btn-primary my-4" (click)="submit()">Get OTP</button>
+            <button mat-stroked-button color="accent" class="my-4" (click)="submit()">Get OTP</button>
           </div>
         </form>
       </div>
