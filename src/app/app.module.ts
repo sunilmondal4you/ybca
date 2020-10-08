@@ -4,12 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AngularMaterialModule } from './angular-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
 
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    // BrowserAnimationsModule,
-    // AngularMaterialModule
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

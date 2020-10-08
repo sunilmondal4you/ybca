@@ -1,5 +1,11 @@
 <div>
   <div class="row m-0">
+    <h2 class="col-12" id="myUserLabel">
+      <span class="fa fa-arrow-right ml-2" (click)="previousState()"></span>
+      <button class="btn btn-dark float-right jh-create-entity">
+        <span>Back</span>
+      </button>
+    </h2>
     <div class="col-12 p-2">
       <div class="cardBg ml-auto mr-auto text-center">
         <h1 class="cardNumber">{{giftCards.card_number}}</h1>
@@ -35,7 +41,10 @@
           </span>
         </h2>
       </div>
-      <div class="txnSec" *ngFor="let txn of giftCards.transactions">
+      <div class="txnSec">
+        <div>
+          <img src="">
+        </div>
 
       </div>
     </div>

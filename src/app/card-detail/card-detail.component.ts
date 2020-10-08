@@ -31,4 +31,8 @@ export class CardDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  previousState() {
+    window.history.back();
+  };
+
 }

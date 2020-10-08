@@ -7,16 +7,19 @@
     <img src="../../assets/img/admin.png" alt="user img" class="user-image">
   </div>
   <div class="row m-0">
-    <div class="col">Virtual Card</div>
-    <div class="col">Physical Card</div>
-  </div>
-  <div class="row justify-content-center compBg mt-5 m-2 py-3">
-    <div class="col-8 p-2">
-      <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards" (click)="viewCardDetail()">
-        <h1 class="cardNumber">{{card.CardNumber}}</h1>
-        <h2 class="expDate">Expiry Date {{card.expDate}}</h2>
-        <h2 class="cardUserName">{{card.name}}</h2>
-      </div>
-    </div>
+    <mat-tab-group class="col-12">
+      <mat-tab label="Virtual Card">
+        <div class="row justify-content-center compBg mt-5 m-2 py-3">
+          <div class="col-8 p-2">
+            <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards" (click)="viewCardDetail()">
+              <h1 class="cardNumber">{{card.CardNumber}}</h1>
+              <h2 class="expDate">Expiry Date {{card.expDate}}</h2>
+              <h2 class="cardUserName">{{card.name}}</h2>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Physical Card"> Content 2 </mat-tab>
+    </mat-tab-group>
   </div>
 </div>
