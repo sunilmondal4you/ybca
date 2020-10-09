@@ -5,7 +5,7 @@
   background: darkcyan;
   border-radius: 52px
 }
-
+#myUserLabel{color: #fff;}
 .cardBg{
   background-image: url(./../../assets/img/Gift_Card.png);
   background-color: #cccccc;
@@ -16,7 +16,44 @@
   background-size: cover;
   border-radius: 20px;
 }
+.clearfix:before,.clearfix:after{content: '';display: table;}
+.clearfix:after{clear: both;}
+.pull-left{float: left;}
+.pull-right{float: right;}
+.txnSec-wrpr-content {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+.txnSec-wrpr-content {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+.txnSec-inner {
+    position: relative;
+    padding: 10px 0 10px 85px;
+    min-height: 69px;
+}
+.txnSec-inner+.txnSec-inner{margin-top: 20px;}
+.txnSec-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.from-ttl, .tran-dt {
+    margin-top: 10px;
+}
+.cd-name{color: #fff;padding-bottom: 20px;font-size: 20px;color: #fff;position: relative;margin: 20px 0 50px;}
+.txnSec-wrpr {
+    background-color: #fff;
+    padding: 40px 30px 0;
+    border-radius: 50px 50px 0 0;
+}
+.cd-name:before{content: '';position: absolute;width: 40px;height: 3px;left: 0;right: 0;bottom: 0;background-color: #6ca9c9;margin: 0 auto;}
+.card-info{font-size: 16px;color: #fff;}
 .cardNumber{
   padding-top: 70px;
   color: #fff;
@@ -58,7 +95,50 @@
   float: right;
   color: #0db40d;
 }
-.txnSec{
+.cardBg{
+  background-image: url(./../../assets/img/Gift_Card.png);
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  float: left;
+  margin-bottom: 30px !important;
+  max-width: 95%;
+}
+.cardBg:nth-child(2n) {
+  margin-left: 44px !important;
+}
+.hm-tb-wrpr .col-12{padding: 0;}
+@media (max-width: 767px){
+.cardBg{float: none;}
+.cardBg:nth-child(2n) {
+  margin-left: 0 !important;
+}
 
+.menu-title {
+  font-size: 15px;
+}
+}
+@media(max-width: 359px) {
+.cardBg {
+    height: 170px;
+    width: 280px;
+}
+.cardNumber {
+  font-size: 14px;
+  padding-top: 70px;
+  color: #fff;
+}
+.expDate {
+  color: #fff;
+  font-size: 12px;
+}
+.cardUserName {
+  color: #fff;
+  letter-spacing: 6px;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
 }
 

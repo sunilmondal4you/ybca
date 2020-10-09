@@ -1,14 +1,15 @@
 <div class="row m-0">
-  <div class="col-6">
+  <div class="col-12">
     <div class="topSec">
       <div>
-        <img src="../../assets/img/logo.png" alt="Logo">
-        <div>Welcome To</div>
-        <div>Yes Bank Puls</div>
+        <img class="logo" src="../../assets/img/logo.png" alt="Logo">
+        <div class="wl-txt">Welcome To</div>
+        <div class="wl-t-ybp">Yes Bank Puls</div>
       </div>
     </div>
     <div class="bottomSec">
-      <div>
+      <div class="login-wrpr">
+        <div class="login-ttl">Login</div>
         <form [formGroup]="cardForm" *ngIf="!mobileSecDisp">
           <mat-form-field class="form-group example-full-width">
             <mat-label>Card Type</mat-label>
@@ -20,7 +21,7 @@
             </mat-select>
           </mat-form-field>
           <div class="text-center">
-            <button type="button" class="btn btn-primary my-4" (click)="next()">Next
+            <button type="button" class="btn btn-primary my-4" [disabled]="cardForm.invalid" (click)="next()">Next
               <span class="fa fa-arrow-right"></span>
             </button>
           </div>
@@ -29,13 +30,13 @@
           <mat-form-field class="form-group example-full-width mb-0">
             <mat-label>Mobile No.</mat-label>
             <input matInput type="text" class="form-control" placeholder="Mobile" name="mobile" formControlName="mobile">
-            <mat-error *ngIf="mobileForm.get('mobile').errors.required">This field is required.</mat-error>
             <div *ngIf="mobileForm.get('mobile').invalid && (mobileForm.get('mobile').dirty || mobileForm.get('mobile').touched)">
+              <mat-error *ngIf="mobileForm.get('mobile').errors.required">This field is required.</mat-error>
               <mat-error *ngIf="mobileForm.get('mobile').errors.maxlength">This field cannot be longer than 10 characters.</mat-error>
             </div>
           </mat-form-field>
           <div class="text-center">
-            <button mat-stroked-button color="accent" class="my-4" (click)="submit()">Get OTP</button>
+            <button mat-stroked-button color="accent" class="my-4" [disabled]="mobileForm.invalid" (click)="submit()">Get OTP</button>
           </div>
         </form>
       </div>

@@ -1,37 +1,78 @@
-.user-image{
-  float: right;
-  height: 110px;
-  width: 110px;
-  background: darkcyan;
-  border-radius: 52px
+.home-bg{
+  background: #fff;
 }
-
+.user-image{
+  max-width: 100%;
+  display: block;
+}
+.user-img-wrpr{padding-right: 15px;}
+.header-col h1.hdr-hlo-txt{font-size: 16px;color: #000;margin-bottom: 0;line-height: 1.1;padding-top: 4px;}
+.hdr-ur-nm{font-size: 14px;}
+p.hdr-ur-nm {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #000;
+}
+.hm-tb-wrpr{max-width: 700px;margin: 0 auto;padding-bottom: 120px;}
+.user-img-wrpr>div{width: 50px;height: 50px;float: right;padding: 10px;border-radius: 10px;background-color: #fff;}
 .cardBg{
   background-image: url(./../../assets/img/Gift_Card.png);
   background-color: #cccccc;
-  height: 225px;
-  width: 385px;
+  height: 187px;
+  width: 320px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  float: left;
+  margin-bottom: 30px !important;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  bottom: 0;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 35px 35px 0 0;
+  z-index: 2;
+  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.35)
+}
+
+.footer .foot-link {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.footer .foot-link+.foot-link {
+    margin-left: 30px;
+}
+
+.menu-title {
+    font-size: 18px;
+    color: #000;
+    margin-top: 5px;
 }
 
 .cardNumber{
-  padding-top: 70px;
-  color: #fff;
-  letter-spacing: 6px;
-  margin-bottom: 0px;
+      font-size: 18px;
+    padding-top: 70px;
+    color: #fff;
+    letter-spacing: 6px;
+    margin-bottom: 0px;
 }
 .expDate{
-  color: #fff;
-  letter-spacing: 6px;
-  margin-bottom: 0px;
+      color: #fff;
+    letter-spacing: 6px;
+    margin-bottom: 0px;
+    font-size: 14px;
 }
 .cardUserName{
   color: #fff;
-  letter-spacing: 6px;
-  margin-bottom: 0px;
+    letter-spacing: 6px;
+    margin-bottom: 0px;
+    font-size: 14px;
 }
 .manageSec{
   color: #b0b01c;
@@ -57,5 +98,41 @@
 .balanceAmt{
   float: right;
   color: #0db40d;
+}
+.hm-tb-wrpr .col-12 .cardBg:nth-child(2n) {
+    margin-left: 44px !important;
+}
+.hm-tb-wrpr .col-12{padding: 0;}
+@media (max-width: 767px){
+  .cardBg{float: none;}
+  .hm-tb-wrpr .col-12 .cardBg:nth-child(2n) {
+    margin-left: 0 !important;
+  }
+
+  .menu-title {
+    font-size: 15px;
+  }
+}
+@media(max-width: 359px) {
+  .cardBg {
+      height: 170px;
+      width: 280px;
+  }
+  .cardNumber {
+    font-size: 14px;
+    padding-top: 70px;
+    color: #fff;
+}
+.expDate {
+    color: #fff;
+    font-size: 12px;
+}
+.cardUserName {
+    color: #fff;
+    letter-spacing: 6px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+.hm-tb-wrpr .row{margin-left: 0 !important;margin-right: 0 !important}
 }
 

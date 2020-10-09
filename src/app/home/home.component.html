@@ -1,25 +1,47 @@
-<div>
+<div class="home-bg">
   <div class="row m-0 p-3">
-    <div class="col">
-      <h1>Hello</h1>
-      <p>Mr Felix Leven</p>
+    <div class="col header-col">
+      <h1 class="hdr-hlo-txt">Hello</h1>
+      <p class="hdr-ur-nm">Mr Felix Leven</p>
     </div>
-    <img src="../../assets/img/admin.png" alt="user img" class="user-image">
+    <div class="user-img-wrpr">
+      <div>
+        <img src="../../assets/img/admin.png" alt="user img" class="user-image">
+      </div>
+    </div>
   </div>
   <div class="row m-0">
-    <mat-tab-group class="col-12">
-      <mat-tab label="Virtual Card">
-        <div class="row justify-content-center compBg mt-5 m-2 py-3">
-          <div class="col-8 p-2">
-            <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards" (click)="viewCardDetail()">
-              <h1 class="cardNumber">{{card.CardNumber}}</h1>
-              <h2 class="expDate">Expiry Date {{card.expDate}}</h2>
-              <h2 class="cardUserName">{{card.name}}</h2>
+    <div class="col-12">
+      <div class="hm-tb-wrpr">
+        <mat-tab-group>
+          <mat-tab label="Virtual Card">
+            <div class="row justify-content-center compBg mt-5 m-2 py-3">
+              <div class="col-12">
+                <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards" (click)="viewCardDetail()">
+                  <h1 class="cardNumber">{{card.CardNumber}}</h1>
+                  <h2 class="expDate">Expiry Date {{card.expDate}}</h2>
+                  <h2 class="cardUserName">{{card.name}}</h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </mat-tab>
-      <mat-tab label="Physical Card"> Content 2 </mat-tab>
-    </mat-tab-group>
+          </mat-tab>
+          <mat-tab label="Physical Card"> Content 2 </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="foot-link">
+      <img src="./../../assets/img/home.png">
+      <div class="menu-title">Home</div>
+    </div>
+    <div class="foot-link">
+      <img src="./../../assets/img/add.png">
+      <div class="menu-title">Add Card</div>
+    </div>
+    <div class="foot-link">
+      <img src="./../../assets/img/view.png">
+      <div class="menu-title">View Card</div>
+    </div>
   </div>
 </div>
