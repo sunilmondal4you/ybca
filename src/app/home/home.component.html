@@ -17,7 +17,7 @@
           <mat-tab label="Virtual Card">
             <div class="row justify-content-center compBg mt-5 m-2 py-3">
               <div class="col-12">
-                <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards" (click)="viewCardDetail()">
+                <div class="cardBg ml-auto mr-auto pl-4 mb-2" *ngFor="let card of giftCards; let i = index;" (click)="viewCardDetail(card, i)">
                   <h1 class="cardNumber">{{card.CardNumber}}</h1>
                   <h2 class="expDate">Expiry Date {{card.expDate}}</h2>
                   <h2 class="cardUserName">{{card.name}}</h2>
@@ -42,6 +42,33 @@
     <div class="foot-link">
       <img src="./../../assets/img/view.png">
       <div class="menu-title">View Card</div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 otp-bg" [hidden]="!otpSecDisp" (click)="otpSecDisp = !otpSecDisp">
+  <div class="col-12">
+    <div class="topSec">
+
+    </div>
+    <div class="bottomSec">
+      <div class="login-wrpr">
+        <div class="login-ttl">Yes Regalia</div>
+        <div>Enter the OTP no. sent on your register mobile no. 9820326064</div>
+        <form [formGroup]="editForm">
+          <mat-form-field class="form-group example-full-width mb-0">
+            <mat-label>Otp</mat-label>
+            <input matInput type="otp" class="form-control" placeholder="Otp" name="otp" formControlName="otp">
+            <div *ngIf="editForm.get('otp').invalid && (editForm.get('otp').dirty || editForm.get('otp').touched)">
+              <mat-error *ngIf="editForm.get('otp').errors.required">This field is required.</mat-error>
+              <mat-error *ngIf="editForm.get('otp').errors.maxlength">This field cannot be longer than 4 characters.</mat-error>
+            </div>
+          </mat-form-field>
+          <div class="text-center">
+            <button mat-stroked-button color="accent" class="my-4" (click)="submit()">Get OTP</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

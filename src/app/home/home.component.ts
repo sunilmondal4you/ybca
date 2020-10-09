@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import _lodash from 'lodash';
 
 @Component({
@@ -8,6 +9,9 @@ import _lodash from 'lodash';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  editForm: FormGroup;
+  otpSecDisp = false;
+
   giftCards = [
     {'id':1, 'name':'Mr Rajesh', 'mobile':'11111111', 'CardNumber':'1234567812345678', 'status':'Active', 'expDate':'09/20'},
     {'id':2, 'name':'Mr Sunil', 'mobile':'11111111', 'CardNumber':'1234567812345678', 'status':'Bocked', 'expDate':'09/20'},
@@ -17,16 +21,28 @@ export class HomeComponent implements OnInit {
   ]
   constructor(
     private router: Router,
+    private formBuilder : FormBuilder,
   ) { }
+
+  initializeForm(){
+    this.editForm = this.formBuilder.group({
+      otp: ['', Validators.required],
+    })
+  }
 
   ngOnInit(): void {
     _lodash.forEach(this.giftCards, (item: any) => {
       if(item.CardNumber) item.CardNumber = item.CardNumber.replace(/(\d{4}(?!\s))/g, "$1 ")
     });
+
+    this.initializeForm();
   }
 
   viewCardDetail(){
-    this.router.navigate(['/card-detail']);
+    this.otpSecDisp = true;
   }
 
+  submit(){
+    this.router.navigate(['/card-detail']);
+  }
 }
