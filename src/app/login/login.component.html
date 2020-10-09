@@ -21,7 +21,7 @@
             </mat-select>
           </mat-form-field>
           <div class="text-center">
-            <button type="button" class="btn btn-primary my-4" [disabled]="cardForm.invalid" (click)="next()">Next
+            <button type="button" class="btn btn-primary my-4" (click)="next()">Next
               <span class="fa fa-arrow-right"></span>
             </button>
           </div>
@@ -36,7 +36,7 @@
             </div>
           </mat-form-field>
           <div class="text-center">
-            <button mat-stroked-button color="accent" class="my-4" [disabled]="mobileForm.invalid" (click)="submit()">Get OTP</button>
+            <button mat-stroked-button color="accent" class="my-4" (click)="submit()">Get OTP</button>
           </div>
         </form>
       </div>
